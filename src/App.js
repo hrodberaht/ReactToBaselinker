@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Product from './Product/Product';
 import SearchProduct from './SearchProduct/SearchProduct'
 class App extends Component {
   state = {
@@ -21,18 +20,11 @@ class App extends Component {
   }
 
 
-  showProducts = () => {
-    return this.state.products.map((product, index) => {
-      return <Product product={product} key={index} />
-    })
-  }
+  
   render() {
     return (
       <div className="App">
-      <SearchProduct search={this.search}/>
-        <div className="Product">
-          {this.showProducts()}
-        </div>
+      <SearchProduct products={this.state.products}/>
       </div>
     );
   }
