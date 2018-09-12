@@ -15,7 +15,7 @@ class App extends Component {
       {
         ean: 12312323,
         name: "Toy"
-      },
+      }
     ]
   };
 
@@ -24,20 +24,17 @@ class App extends Component {
   searchHandler = event => {
     if (event.target.value) {
       this.notFilter = this.state;
-      
-      const filteredProduct = this.state.products.filter((product) => {
+
+      const filteredProduct = this.state.products.filter(product => {
         return product.name[0] === event.target.value;
-      })
-      console.log(filteredProduct)
+      });
+
       this.setState({
         products: filteredProduct
       });
-      console.log(this.state);
+      
     } else {
       this.setState(this.notFilter);
-      console.log('not definied')
-      console.log(this.state);
-
     }
   };
 
