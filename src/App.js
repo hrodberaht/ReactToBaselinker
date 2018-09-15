@@ -12,19 +12,24 @@ class App extends Component {
         ean: 12312323,
         name: 'Doll'
       },
-    ]
+    ],
+    showProducts: false,
   }
-  
+
   search = (e) => {
     console.log(e);
   }
 
+  toggleProducts = () => {
+    const showProducts = this.state.showProducts;
+    this.setState({ showProducts: !showProducts });
+  }
 
-  
+
   render() {
     return (
       <div className="App">
-      <SearchProduct products={this.state.products}/>
+        <SearchProduct toggleProducts={this.toggleProducts} state={this.state} />
       </div>
     );
   }
